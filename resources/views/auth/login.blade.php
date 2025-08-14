@@ -19,7 +19,8 @@
                 <img class="mb-4" src="{{ URL::asset('img/transparan-logo-name.png') }}" alt="icons" width="200" height="200">
             </div> --}}
 
-            <h1 class="h3 fw-normal mb-5">PT Wide Technologies</h1>
+            <h1 class="h3 fw-normal mb-3">PT Wide Technologies</h1>
+             <h3 class="h5 fw-normal mb-5">(Vulnerable-App)</h3>
 
             @if (session()->has('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">

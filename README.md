@@ -1,5 +1,5 @@
-# Sistem Informasi Keuangan
-Sistem Informasi Keuangan merupakan aplikasi berbasis website yang ditujukan untuk menunjang Tugas Akhir (Skripsi). Dibangun dengan Framework Laravel 10 dan Menggunakan Template Bootstrap 5.
+# Sistem Pencatatan dan Management Keuangan
+Sistem ini adalah aplikasi web yang dirancang sebagai sarana edukasi untuk memahami praktik keamanan siber, khususnya terkait kerentanan OWASP Top 10 A01: Broken Access Control. Aplikasi ini dikembangkan menggunakan framework Laravel 10 dan antarmuka penggunanya dibangun dengan Bootstrap 5
 
 ## Tech
 - [Laravel 10](https://laravel.com/) - The PHP Framework for Web Artisans
@@ -49,11 +49,21 @@ php artisan migrate
 php artisan db:seed
 ```
 
+##### Install Laravel Sanctum:
+```sh
+composer require laravel/sanctum
+```
+
 ##### Run Laravel:
 ```sh
 php artisan serve
 ```
-or
-```sh
-php artisan ser
-```
+##### Akun Pengguna Default, Setelah menjalankan php artisan db:seed, Anda dapat menggunakan akun-akun berikut untuk login:
+
+| Email                                                          | Password | Role            |
+| -------------------------------------------------------------- | -------- | --------------- |
+| [admin@gmail.com](mailto:admin@gmail.com)                      | test123  | Admin           |
+| [finance\_manager@gmail.com](mailto:finance_manager@gmail.com) | test123  | Finance Manager |
+| [test@gmail.com](mailto:test@gmail.com)                        | test123  | Karyawan        |
+| [karyawan@gmail.com](mailto:karyawan@gmail.com)                | test123  | Karyawan        |
+
