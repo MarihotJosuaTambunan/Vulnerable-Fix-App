@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
         Employee::create([
             'salary_id'     => 1,
             'nip'           => '01136738',
-            'nama'          => 'Christian Yohanes',
+            'nama'          => 'Marihot Tambunan',
             'jenis_kelamin' => 'L',
             'tempat_lahir'  => 'Tangerang',
             'tgl_lahir'     => '2001-09-08',
@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
         Employee::create([
             'salary_id'     => 2,
             'nip'           => '01276738',
-            'nama'          => 'Marihot Tambunan',
+            'nama'          => 'Christian Simngunsong',
             'jenis_kelamin' => 'P',
             'tempat_lahir'  => 'Cikarang',
             'tgl_lahir'     => '2003-09-08',

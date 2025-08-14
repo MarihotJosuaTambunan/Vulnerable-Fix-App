@@ -20,6 +20,7 @@
             </div> --}}
 
             <h1 class="h3 fw-normal mb-5">PT Wide Technologies</h1>
+            <h3 class="h5 fw-normal mb-5">(Fixed-App)</h3>
 
             @if (session()->has('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">

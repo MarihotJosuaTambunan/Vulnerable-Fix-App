@@ -64,6 +64,15 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
+
+
+
+
+
+
+
+        
+
         // Middleware untuk hak akses admin
         'admin' => \App\Http\Middleware\IsAdmin::class,
         'finance_manager' => \App\Http\Middleware\Isfinance_manager::class,

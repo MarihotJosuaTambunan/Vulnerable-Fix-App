@@ -64,8 +64,13 @@ Route::middleware(['auth:sanctum', 'employee.access'])->group(function () {
                 ->where('karyawan_id', $id)
                 ->get(['id', 'karyawan_id', 'gaji_id', 'tgl_gajian', 'created_at', 'updated_at']);
                 
-            if($salaries->isEmpty()) {
-                return response()->json(['message' => 'Data gaji tidak ditemukan'], 404);
+            if ($salaries->isEmpty()) {
+                return response()->json([
+                    'success' => true,
+                    'data' => [],
+                    'message' => 'Belum ada data gaji',
+                    'total_keseluruhan' => 0
+                ]);
             }
             
             $formattedSalaries = $salaries->map(function($item) {
