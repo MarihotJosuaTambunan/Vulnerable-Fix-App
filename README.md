@@ -11,7 +11,7 @@ Laravel 10.x requires a minimum PHP version of 8.1 to run.
 
 ##### Git Clone:
 ```sh
-git clone https://github.com/putragstn/sistem-informasi-keuangan.git
+git clone https://github.com/marihottambunan/Vulnerable-Fix-App.git
 ```
 
 ##### Change Directory Into Project:
