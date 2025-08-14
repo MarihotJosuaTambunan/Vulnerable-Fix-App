@@ -16,7 +16,7 @@ git clone -b Fixed-App https://github.com/marihottambunan/Vulnerable-Fix-App.git
 
 ##### Change Directory Into Project:
 ```sh
-cd sistem-informasi-keuangan
+cd Vulnerable-Fix-App
 ```
 
 ##### Install Composer Dependencies, to install Vendor file Laravel:
