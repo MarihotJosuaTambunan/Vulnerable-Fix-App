@@ -27,6 +27,24 @@
                     Edit Data Pemasukan
                 </div>
                 <div class="card-body">
+                    {{-- Tampilkan Error Validation --}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    {{-- Tampilkan Success Message --}}
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     {{-- Form --}}
                     <form action="/data/pemasukan/{{ $income->id }}" method="POST">
 
@@ -39,15 +57,29 @@
                         <div class="mb-3 row">
                             <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
                             <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal', $income->tanggal) }}" required>
+                                <input type="datetime-local" class="form-control @error('tanggal') is-invalid @enderror" 
+                                       id="tanggal" name="tanggal" value="{{ old('tanggal', $income->tanggal) }}" required>
+                                @error('tanggal')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="mb-3 row">
                             <label for="nominal" class="col-sm-2 col-form-label">Nominal</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="nominal" name="nominal" value="{{ old('nominal', $income->nominal) }}" required>
+                                <input type="number" class="form-control @error('nominal') is-invalid @enderror" 
+                                       id="nominal" name="nominal" value="{{ old('nominal', $income->nominal) }}" 
+                                       min="1" step="1" required>
+                                @error('nominal')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
+                        </div>
                         </div>
 
                         <div class="mb-3 row">

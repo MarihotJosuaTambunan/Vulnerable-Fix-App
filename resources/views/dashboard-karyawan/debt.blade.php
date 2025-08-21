@@ -21,6 +21,24 @@
                 Form Pinjam Hutang 
             </div>
             <div class="card-body">
+                {{-- Tampilkan Error Validation --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                {{-- Tampilkan Success Message --}}
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 <form action="/dashboard/karyawan/hutang" method="POST">
                     @csrf
                     <input type="hidden" name="employee_id" value="{{ $selectedEmployee->id }}">
@@ -35,14 +53,33 @@
                         <div class="mb-3 row">
                             <label for="jumlah_hutang" class="col-sm-4 col-form-label">Jumlah Hutang</label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="jumlah_hutang" required>
+                                <input type="number" class="form-control @error('jumlah_hutang') is-invalid @enderror" 
+                                       name="jumlah_hutang" 
+                                       value="{{ old('jumlah_hutang') }}"
+                                       min="1" 
+                                       step="1" 
+                                       required>
+                                @error('jumlah_hutang')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
     
                         <div class="mb-3 row">
                             <label for="alasan" class="col-sm-4 col-form-label">Alasan</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="alasan" required>
+                                <input type="text" class="form-control @error('alasan') is-invalid @enderror" 
+                                       name="alasan" 
+                                       value="{{ old('alasan') }}"
+                                       maxlength="255"
+                                       required>
+                                @error('alasan')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
     

@@ -40,6 +40,23 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'tanggal' => 'required|date',
+            'nominal' => 'required|numeric|min:1',
+            'category_id' => 'required|exists:categories,id',
+            'keterangan' => 'required|string|max:255'
+        ], [
+            'nominal.required' => 'Nominal pemasukan harus diisi.',
+            'nominal.numeric' => 'Nominal pemasukan harus berupa angka.',
+            'nominal.min' => 'Nominal pemasukan tidak boleh kurang dari Rp 1.',
+            'tanggal.required' => 'Tanggal harus diisi.',
+            'tanggal.date' => 'Format tanggal tidak valid.',
+            'category_id.required' => 'Kategori harus dipilih.',
+            'keterangan.required' => 'Keterangan harus diisi.',
+            'keterangan.max' => 'Keterangan maksimal 255 karakter.'
+        ]);
+
         Income::create($request->all());
 
         return redirect('/data/pemasukan')->with('success', 'Data berhasil ditambahkan');
@@ -70,6 +87,23 @@ class IncomeController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'tanggal' => 'required|date',
+            'nominal' => 'required|numeric|min:1',
+            'category_id' => 'required|exists:categories,id',
+            'keterangan' => 'required|string|max:255'
+        ], [
+            'nominal.required' => 'Nominal pemasukan harus diisi.',
+            'nominal.numeric' => 'Nominal pemasukan harus berupa angka.',
+            'nominal.min' => 'Nominal pemasukan tidak boleh kurang dari Rp 1.',
+            'tanggal.required' => 'Tanggal harus diisi.',
+            'tanggal.date' => 'Format tanggal tidak valid.',
+            'category_id.required' => 'Kategori harus dipilih.',
+            'keterangan.required' => 'Keterangan harus diisi.',
+            'keterangan.max' => 'Keterangan maksimal 255 karakter.'
+        ]);
+
         $data = [
             'user_id'       => $request->input('user_id'),
             'tanggal'       => $request->input('tanggal'),

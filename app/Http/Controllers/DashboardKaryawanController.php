@@ -104,6 +104,12 @@ class DashboardKaryawanController extends Controller
             'employee_id' => 'required|exists:employees,id',
             'jumlah_hutang' => 'required|numeric|min:1',
             'alasan' => 'required|string|max:255'
+        ], [
+            'jumlah_hutang.required' => 'Jumlah hutang harus diisi.',
+            'jumlah_hutang.numeric' => 'Jumlah hutang harus berupa angka.',
+            'jumlah_hutang.min' => 'Jumlah hutang tidak boleh kurang dari Rp 1.',
+            'alasan.required' => 'Alasan pinjaman harus diisi.',
+            'alasan.max' => 'Alasan pinjaman maksimal 255 karakter.'
         ]);
 
         Debt::create([
