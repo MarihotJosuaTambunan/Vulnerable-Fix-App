@@ -1,5 +1,5 @@
 # Sistem Pencatatan dan Management Keuangan
-Sistem ini adalah aplikasi web yang dirancang sebagai sarana edukasi untuk memahami praktik keamanan siber, khususnya terkait kerentanan OWASP Top 10 A01: Broken Access Control. Aplikasi ini dikembangkan menggunakan framework Laravel 10 dan antarmuka penggunanya dibangun dengan Bootstrap 5
+Sistem ini adalah aplikasi web yang dirancang sebagai sarana edukasi untuk memahami praktik keamanan siber. Aplikasi ini dikembangkan menggunakan framework Laravel 10 dan antarmuka penggunanya dibangun dengan Bootstrap 5
 
 ## Tech
 - [Laravel 10](https://laravel.com/) - The PHP Framework for Web Artisans
